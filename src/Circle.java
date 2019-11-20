@@ -11,24 +11,31 @@ public class Circle
 	{
 		this(r,false);
 	}
+	//default constructor
 	public Circle()
 	{
-		this(1,false);
+		this(1.0,false);
 	}
 	public static double getCircumference()
 	{
-		double Umfang=2*SomeMaths.PI*radius;
-		return Umfang;	
+		double umfang=2*SomeMaths.PI*radius;
+		return umfang;	
 	}
 	public static double getArea()
 	{
-		double Flaeche=radius*radius*SomeMaths.PI;
-		return Flaeche;
+		double flaeche=radius*radius*SomeMaths.PI;
+		return flaeche;
 	}
 	public void setFilled(boolean filled) {
 		this.filled = filled;
 	}
-	public static void setRadius(double radius) {
+	public static void setRadius(double radius) 
+	{
+		if(radius<=1) 
+		{
+			System.out.println("Der Radius muss positiv sein!");
+			return;
+		}
 		Circle.radius = radius;
 	}
 	public boolean getFilled() {
