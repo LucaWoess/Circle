@@ -6,15 +6,18 @@ public class Circle
 	{
 		radius=r;
 		filled=f;
+		System.out.print("Der Kreis");
 	}
 	public Circle(double r) 
 	{
 		this(r,false);
+		System.out.print("Der Kreis");
 	}
 	//default constructor
 	public Circle()
 	{
 		this(1.0,false);
+		System.out.print("Der Kreis");
 	}
 	public static double getCircumference()
 	{
