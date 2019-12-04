@@ -4,6 +4,6 @@ public class SomeMaths
 
 	public static double getSquare(double x)
 	{
-	 	return x=x*x;
+	 	return x*x;
 	}
 }

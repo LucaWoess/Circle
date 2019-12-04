@@ -6,29 +6,30 @@ public class Circle
 	{
 		radius=r;
 		filled=f;
-		System.out.print("Der Kreis");
 	}
 	public Circle(double r) 
 	{
 		this(r,false);
-		System.out.print("Der Kreis");
 	}
 	//default constructor
 	public Circle()
 	{
 		this(1.0,false);
-		System.out.print("Der Kreis");
 	}
 	public static double getCircumference()
 	{
 		double umfang=2*SomeMaths.PI*radius;
 		return umfang;	
 	}
-	public static double getArea()
-	{
-		double flaeche=radius*radius*SomeMaths.PI;
-		return flaeche;
+
+	public double getCircumference(double radius) {
+		return 2 * SomeMaths.PI * radius;
 	}
+	
+	public double getArea(double radius) {
+		return SomeMaths.PI * SomeMaths.getSquare(radius);
+	}
+	
 	public void setFilled(boolean filled) {
 		this.filled = filled;
 	}
@@ -46,5 +47,20 @@ public class Circle
 	}
 	public static double getRadius() {
 		return radius;
+	}
+	public void output() {
+		System.out.println("Radius: "+getRadius());
+		outputAreaOrCircumference(getFilled());
+		System.out.println("________________________\n");
+		
+	}
+	private void outputAreaOrCircumference(boolean filled2) {
+		if (filled) {
+			System.out.println("Flaeche: "+getArea(getRadius())+"\n");
+		}
+		else {
+			System.out.println("Umfang: "+getCircumference(getRadius())+"\n");
+		}
+		
 	}
 }
